@@ -26,6 +26,10 @@ public class AbstractBasePage {
           PageFactory.initElements(Driver.getDriver(), this);  //just for FindBy annotations
     }
 
+    /**
+     * Specifycomponent name as a parameter, like: "View all products", "Order", "View all orders"
+     * @param component
+     */
     public void navigateTo(String component){
           String locator = "//a[text()='"+component+"']";
           wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator))).click();
